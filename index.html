@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>CYBERIA 2K26 REC</title>
+<meta name="description" content="CYBERIA 2K26 is a national-level technical symposium organized by the Departments of CSE and AI&amp;DS at Roever Engineering College, Elambalur, Perambalur, Tamil Nadu.">
+<meta name="theme-color" content="#0a0000">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="CYBERIA 2K26 | National Level Technical Symposium">
+<meta property="og:description" content="Where Intelligence Meets Innovation. A national-level technical symposium by CSE &amp; AI&amp;DS, Roever Engineering College.">
+<meta property="og:image" content="assets/logo/REC-Logo.png">
+<meta property="og:url" content="[CANONICAL_URL]">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CYBERIA 2K26 | National Level Technical Symposium">
+<meta name="twitter:description" content="Where Intelligence Meets Innovation. CSE × AI&amp;DS, Roever Engineering College.">
+<meta name="twitter:image" content="assets/logo/REC-Logo.png">
+
+<link rel="canonical" href="[CANONICAL_URL]">
+<link rel="icon" type="image/png" href="assets/logo/REC-Logo.png" sizes="32x32">
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "CYBERIA 2K26",
+  "description": "National level technical symposium organized by the Departments of Computer Science & Engineering and Artificial Intelligence & Data Science at Roever Engineering College.",
+  "startDate": "2026-08-28T10:00:00+05:30",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "location": {
+    "@type": "Place",
+    "name": "Roever Engineering College",
+    "address": "Elambalur, Perambalur, Tamil Nadu"
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Department of CSE & Department of AI&DS, Roever Engineering College"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<!-- ============================================================
+     LOADER
+     ============================================================ -->
+<div id="loader" role="status" aria-live="polite">
+  <div class="loader-mark">CYBERIA <span>2K26</span></div>
+  <div class="loader-bar"><i></i></div>
+  <div class="loader-status" id="loaderStatus">INITIALIZING CYBERIA...</div>
+</div>
+
+<div id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<header id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="brand" aria-label="CYBERIA 2K26 home">
+      <img src="assets/logo/REC-Logo.png" alt="REC logo" class="brand-logo">
+      <span class="brand-text">
+        <span class="brand-name">CYBERIA</span>
+        <span class="brand-year">2K26</span>
+      </span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#hero" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#brochure">Brochure</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#venue">Venue</a>
+      <a href="#contact">Contact</a>
+      
+    </nav>
+    <div class="nav-cta">
+      <a href="#register" class="btn btn-primary">Register Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section id="hero">
+  <canvas id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-scanline" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+  <div class="reel-bar left" id="reelLeft" aria-hidden="true"></div>
+  <div class="reel-bar right" id="reelRight" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <img src="assets/logo/REC-Logo.png" alt="Roever Engineering College logo" class="hero-logo">
+    <p class="hero-college">Roever Engineering College</p>
+    <p class="hero-dept">National Level Technical Symposium 2026</p>
+
+    <div class="logo-wrap hero-glitch">
+      <h1 class="logo-text" id="logoText" aria-label="CYBERIA">
+        <span class="ch">C</span><span class="ch">Y</span><span class="ch">B</span><span class="ch">E</span><span class="ch">R</span><span class="ch">I</span><span class="ch">A</span>
+      </h1>
+      <div class="logo-year">2K26</div>
+    </div>
+
+    <p class="hero-combo">CSE &times; AI&amp;DS</p>
+    <p class="hero-tagline">"Where Intelligence Meets Innovation."</p>
+    <p class="hero-desc">A national-level technical symposium bringing together students, developers, innovators and technology enthusiasts to explore emerging technologies, compete, collaborate and build the future.</p>
+
+    <div class="hero-meta">
+      <span class="meta-pill glass"><i class="dot"></i>28 August 2026 &middot; 10:00 AM</span>
+      <span class="meta-pill glass"><i class="dot"></i>Elambalur &bull; Perambalur. </span>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#register" class="btn btn-primary">Register Now</a>
+      <a href="#events" class="btn btn-ghost">Explore Events</a>
+    </div>
+
+    <div class="countdown-wrap">
+      <p class="countdown-head">Cyberia 2K26 Begins In</p>
+      <div class="countdown" id="countdown">
+        <div class="cd-block glass"><span class="cd-num" id="cdDays">00</span><span class="cd-label">Days</span></div>
+        <div class="cd-block glass"><span class="cd-num" id="cdHours">00</span><span class="cd-label">Hours</span></div>
+        <div class="cd-block glass"><span class="cd-num" id="cdMins">00</span><span class="cd-label">Minutes</span></div>
+        <div class="cd-block glass"><span class="cd-num" id="cdSecs">00</span><span class="cd-label">Seconds</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-content">
+    <span>National Level Technical Symposium</span>
+    <span>Roever Engineering College</span>
+    <span>28 August 2026</span>
+    <span>CSE &times; AI&amp;DS</span>
+    <span>Where Intelligence Meets Innovation</span>
+    <span>National Level Technical Symposium</span>
+    <span>Roever Engineering College</span>
+    <span>28 August 2026</span>
+    <span>CSE &times; AI&amp;DS</span>
+    <span>Where Intelligence Meets Innovation</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     QUICK INFO
+     ============================================================ -->
+<section class="quick-info">
+  <div class="container">
+    <div class="qi-grid">
+      <div class="qi-card glass" data-reveal>
+        <span class="qi-index">SYS.01</span>
+        <h3 class="qi-title">Technical Events</h3>
+        <p>AI, coding, data science, cybersecurity and problem-solving challenges built for builders.</p>
+        <div class="qi-tags"><span>AI</span><span>Coding</span><span>Security</span></div>
+      </div>
+      <div class="qi-card glass" data-reveal>
+        <span class="qi-index">SYS.02</span>
+        <h3 class="qi-title">Non&ndash;Technical Events</h3>
+        <p>Creative, strategic and team-based challenges that reward ideas as much as execution.</p>
+        <div class="qi-tags"><span>Creative</span><span>Strategy</span><span>Teamwork</span></div>
+      </div>
+      <div class="qi-card glass" data-reveal>
+        <span class="qi-index">SYS.03</span>
+        <h3 class="qi-title">Cyberia Highlights</h3>
+        <p>Innovation, competition, networking, certificates and an experience built for students.</p>
+        <div class="qi-tags"><span>Innovation</span><span>Networking</span><span>Certificates</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-layout">
+      <div>
+        <p class="eyebrow" data-reveal>Enter the Digital Frontier</p>
+        <h2 class="section-title" data-reveal>Where Technology<br>Meets <span class="grad-text">Imagination.</span></h2>
+        <div class="section-line" data-reveal></div>
+        <p class="section-sub" data-reveal>CYBERIA 2K26 is a national-level technical symposium organized jointly by the Departments of Computer Science &amp; Engineering and Artificial Intelligence &amp; Data Science at Roever Engineering College.</p>
+
+        <div class="about-focus" data-reveal>
+          <span class="focus-chip">Artificial Intelligence</span>
+          <span class="focus-chip">Data Science</span>
+          <span class="focus-chip">Cybersecurity</span>
+          <span class="focus-chip">Software Engineering</span>
+          <span class="focus-chip">Machine Learning</span>
+          <span class="focus-chip">Cloud Computing</span>
+          <span class="focus-chip">Emerging Technologies</span>
+          <span class="focus-chip">Problem Solving</span>
+        </div>
+
+        <a href="#events" class="btn btn-ghost" data-reveal>View All Events</a>
+
+        <div class="about-stats" data-reveal>
+          <div>
+            <div class="stat-num" data-count="500">0<span class="grad-text">+</span></div>
+            <div class="stat-label">Participants</div>
+          </div>
+          <div>
+            <div class="stat-num" data-count="25">0<span class="grad-text">+</span></div>
+            <div class="stat-label">Events</div>
+          </div>
+          <div>
+            <div class="stat-num" data-count="50">0<span class="grad-text">+</span></div>
+            <div class="stat-label">Colleges</div>
+          </div>
+          <div>
+            <div class="stat-num" data-count="100">0<span class="grad-text">+</span></div>
+            <div class="stat-label">Prizes</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual" data-reveal="scale" aria-hidden="true">
+        <div class="orbit-ring r1"></div>
+        <div class="orbit-ring r2"></div>
+        <div class="orbit-ring r3"></div>
+        <div class="orbit-core">CYBERIA<br>CORE</div>
+        <span class="orbit-node n1">AI</span>
+        <span class="orbit-node n2">DATA</span>
+        <span class="orbit-node n3">CODE</span>
+        <span class="orbit-node n4">CYBER</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DEPARTMENTS
+     ============================================================ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow" style="justify-content:center;" data-reveal>Powered By Two Technologies</p>
+      <h2 class="section-title" data-reveal>The Departments Behind <span class="shift-text">Cyberia</span></h2>
+      <div class="section-line" data-reveal></div>
+    </div>
+    <div class="dept-grid">
+      <div class="dept-card glass" data-reveal>
+        <span class="dept-bg-tag" aria-hidden="true">CSE</span>
+        <span class="dept-code">DEPARTMENT / 01</span>
+        <h3 class="dept-name">Computer Science &amp; Engineering</h3>
+      </div>
+      <div class="dept-card glass" data-reveal>
+        <span class="dept-bg-tag" aria-hidden="true">AI</span>
+        <span class="dept-code">DEPARTMENT / 02</span>
+        <h3 class="dept-name">Artificial Intelligence &amp; Data Science</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EVENTS
+     ============================================================ -->
+<section id="events" class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>National Level Competitions</p>
+      <h2 class="section-title" data-reveal>Challenge Your Limits</h2>
+      <p class="section-sub" data-reveal>Compete across technical and non-technical arenas designed to test skill, speed and imagination.</p>
+      <div class="section-line" data-reveal></div>
+    </div>
+
+    <div class="filter-row" role="tablist" aria-label="Filter events">
+      <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-btn" data-filter="Technical" role="tab" aria-selected="false">Technical</button>
+      <button class="filter-btn" data-filter="Non-Technical" role="tab" aria-selected="false">Non-Technical</button>
+    </div>
+
+    <div class="events-grid" id="eventsGrid"></div>
+  </div>
+</section>
+
+<!-- Event modal -->
+<div class="modal-overlay" id="eventModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="modalCloseBtn" aria-label="Close event details">&times;</button>
+    <div class="modal-top">
+      <span class="event-cat" id="modalCat"></span>
+      <h3 class="modal-title" id="modalTitle" style="margin-top:14px;"></h3>
+      <p id="modalDesc" style="color:var(--text-dim);"></p>
+    </div>
+
+    
+
+    <div class="modal-section">
+      <p class="modal-label">Rules &amp; Guidelines</p>
+      <ul class="modal-rules" id="modalRules"></ul>
+    </div>
+
+    <div class="modal-section">
+      <p class="modal-label">Eligibility</p>
+      <p style="color:var(--text-dim);font-size:14px;" id="modalEligibility">Open to all national-level student participants. [ELIGIBILITY DETAILS]</p>
+    </div>
+
+    <div class="modal-section">
+      <p class="modal-label"></p>
+      <p style="color:var(--text-dim);font-size:14px;" id="modalContact">[CONTACT NUMBER]</p>
+    </div>
+
+    <div class="modal-info-grid">
+      <div><b id="modalTeam"></b></div>
+      <div><b id="modalDuration"></b></div>
+      <div><b id="modalFee">[COORDINATOR]</b>Coordinator</div>
+      <div><b id="modalCoord">[CONTACT]</b>Contact</div>
+    </div>
+    <div class="modal-actions">
+      <a href="#register" class="btn btn-primary">Register Now</a>
+      
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     BROCHURE
+     ============================================================ -->
+<section id="brochure" class="section">
+  <div class="container">
+    <div class="brochure-layout">
+      <div class="brochure-frame glass" data-reveal>
+        <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="brochure-doc">
+          
+          <img src="assets/gallery/Broucher.jpg">
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow" data-reveal>Official Document</p>
+        <h2 class="section-title" data-reveal>Cyberia 2K26 <span class="shift-text">Brochure</span></h2>
+        <p class="section-sub" data-reveal>Explore the official event schedule, guidelines, registration information and event details.</p>
+        <div class="brochure-actions" data-reveal>
+          <a href="assets/gallery/Broucher.jpg" target="_blank" rel="noopener" class="btn btn-primary">View Full Screen</a>
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY
+     ============================================================ -->
+<section id="gallery" class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>Moments From Cyberia</p>
+      <h2 class="section-title" data-reveal>Cyberia Event Gallery</h2>
+      <div class="section-line" data-reveal></div>
+    </div>
+
+   
+
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <button class="lightbox-prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" id="lbNext" aria-label="Next image">&#8250;</button>
+  <button class="lightbox-close" id="lbClose" aria-label="Close image viewer">&times;</button>
+</div>
+
+<!-- ============================================================
+     TEAM
+     ============================================================ -->
+<section id="team" class="section">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow" style="justify-content:center;" data-reveal>The People Behind Cyberia</p>
+      <h2 class="section-title" data-reveal>Organizing Committee</h2>
+      <p class="section-sub" data-reveal>Leadership, faculty mentors and student coordinators driving CYBERIA 2K26.</p>
+      <div class="section-line" data-reveal></div>
+    </div>
+
+    <p class="team-tier-label">Faculty Leadership</p>
+    <div class="team-grid students" style="margin-inline:auto;">
+      <div class="team-card glass" data-reveal>
+        <div class="team-photo"><img src="assets/img/Hod.jpg" alt="Photo of the Head of Department"></div>
+        <p class="team-name">Dr.A.SATHISH</p>
+        <p class="team-role">Head of Department</p>
+        <p class="team-dept">CSE</p>
+        <div class="team-contact"><span></span><span>9994343480</span></div>
+      </div>
+      <div class="team-card glass" data-reveal>
+        <div class="team-photo"><img src="assets/img/Conv.jpg" alt="Photo of the Faculty Convenor"></div>
+        <p class="team-name">Dr.S.VISHNUPRIYA</p>
+        <p class="team-role">Faculty Convenor</p>
+        <p class="team-dept">AI&DS</p>
+        <div class="team-contact"><span></span><span>9489121712 </span></div>
+      </div>
+      
+    </div>
+
+    <p class="team-tier-label">Faculty Coordinators</p>
+    <div class="team-grid leads" style="margin-inline:auto;">
+      <div class="team-card glass" data-reveal>
+        <div class="team-photo"><img src="assets/img/sivakumar.jpg" alt="Photo of Faculty Coordinator 2"></div>
+        <p class="team-name">Mr.K.SIVAKUMAR</p>
+        <p class="team-role">Faculty Coordinator</p>
+        <p class="team-dept">CSE</p>
+        <div class="team-contact"><span></span><span>9524193027</span></div>
+      </div>
+      <div class="team-card glass" data-reveal>
+        <div class="team-photo"><img src="assets/img/Dhanamathimam.jpg" alt="Photo of Faculty Coordinator 3"></div>
+        <p class="team-name">Mrs.A.DHANAMATHI</p>
+        <p class="team-role">Faculty Co-coordinator</p>
+        <p class="team-dept">CSE</p>
+        <div class="team-contact"><span></span><span>9790299320</span></div>
+      </div>
+      <div class="team-card glass" data-reveal>
+        <div class="team-photo"><img src="assets/img/Arasimam.jpg" alt="Photo of Faculty Coordinator 4, if applicable"></div>
+        <p class="team-name">Mrs.P.ARASAI</p>
+        <p class="team-role">Faculty Co-coordinator</p>
+        <p class="team-dept">CSE</p>
+        <div class="team-contact"><span></span><span>7373207090</span></div>
+      </div>
+    </div>
+
+    <p class="team-tier-label">Student Coordinators</p>
+    <div class="team-grid students" style="margin-inline:auto;">
+      <div class="team-card glass" data-reveal>
+        <div class="team-photo"><img src="assets/img/Hari.jpg" alt="Photo of Student Coordinator 1"></div>
+        <p class="team-name">HARIRAJ K</p>
+        <p class="team-role">Student Coordinator</p>
+        <p class="team-dept">Final CSE</p>
+        <div class="team-contact"><span>9585620540</span></div>
+      </div>
+      <div class="team-card glass" data-reveal>
+        <div class="team-photo"><img src="assets/img/Tamil.jpg" alt="Photo of Student Coordinator 2"></div>
+        <p class="team-name">TAMILSELVAN K</p>
+        <p class="team-role">Student Coordinator</p>
+        <p class="team-dept">Final CSE</p>
+        <div class="team-contact"><span>9894770750</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VENUE
+     ============================================================ -->
+<section id="venue" class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal>Location</p>
+      <h2 class="section-title" data-reveal>Find Your Way to <span class="shift-text">Cyberia</span></h2>
+      <div class="section-line" data-reveal></div>
+    </div>
+    <div class="venue-layout">
+      <div class="venue-card glass" data-reveal>
+        <p class="eyebrow" style="margin-bottom:8px;">Venue</p>
+        <h3 style="font-size:22px;">Roever Engineering College</h3>
+        <p class="venue-addr">Elambalur,<br>Perambalur,<br>Tamil Nadu</p>
+        <a href="https://maps.app.goo.gl/fPJoE8U4NL2NKaFs8" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+      </div>
+      <div class="venue-map glass" data-reveal="scale" aria-hidden="true">
+        <!--<div class="grid-lines"></div>
+        <div class="pin"><i></i><span>Elambalur &bull; Perambalur &bull; Tamil Nadu</span></div> -->
+        <img src="assets/gallery/RecBlock.jpg">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow" style="justify-content:center;" data-reveal>Get In Touch</p>
+      <h2 class="section-title" data-reveal>Connect With The Team</h2>
+      <div class="section-line" data-reveal></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card glass" data-reveal>
+        <div class="contact-icon">&#9993;</div>
+        <p class="contact-label">Email</p>
+        <p class="contact-value">office@roeverengg.edu.in</p>
+      </div>
+      <div class="contact-card glass" data-reveal>
+        <div class="contact-icon">&#9742;</div>
+        <p class="contact-label">Phone</p>
+        <p class="contact-value">97509 70157</p>
+      </div>
+      <div class="contact-card glass" data-reveal>
+        <div class="contact-icon">&#9737;</div>
+        <p class="contact-label">Location</p>
+        <p class="contact-value">Elambalur, Perambalur, TN</p>
+      </div>
+      <div class="contact-card glass" data-reveal>
+        <div class="contact-icon">&#9737;</div>
+        <p class="contact-label">Social</p>
+        <p class="contact-value">roeverengg</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INSTAGRAM
+     ============================================================ -->
+<section id="register" class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow" style="justify-content:center;" data-reveal>Stay Updated</p>
+      <h2 class="section-title" data-reveal>Follow <span class="shift-text">Cyberia</span></h2>
+      <div class="section-line" data-reveal></div>
+    </div>
+    <div class="insta-card glass" data-reveal>
+      <div class="insta-left">
+        <div class="insta-avatar"><div>CY</div></div>
+        <div>
+          <p class="insta-name">CYBERIA 2K26</p>
+          <p class="insta-handle">@rec_cyberia_2k26</p>
+        </div>
+      </div>
+      <div class="insta-stats">
+        <div><b>0</b><span>Posts</span></div>
+        <div><b>16</b><span>Followers</span></div>
+        <div><b>31</b><span>Following</span></div>
+      </div>
+      <a href="https://www.instagram.com/rec__cyberia__2k26?igsh=MXNwZmIxb2NwYTlieQ==" target="_blank" rel="noopener" class="btn btn-primary">Follow on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <img src="assets/logo/REC-Logo.png" alt="Roever Engineering College logo" style="height:48px;width:auto;object-fit:contain;margin-bottom:16px;border-radius: 10px;filter:drop-shadow(0 0 8px rgba(255,26,26,.5));">
+        <div class="footer-brand-name">CYBERIA <span class="grad-text">2K26</span></div>
+        <p class="footer-brand-sub">Roever Engineering College<br>Elambalur, Perambalur, Tamil Nadu<br><br>CSE &times; AI&amp;DS</p>
+      </div>
+      <div>
+        <p class="footer-heading">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#brochure">Brochure</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">More</p>
+        <ul class="footer-links">
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-heading">Connect</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/roeverengg?igsh=c3hhaTkwOW5iNDE1" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.linkedin.com/school/roeverengg/" aria-label="LinkedIn" target="_blank" rel="noopener">Li</a>
+          <a href="https://www.facebook.com/recperambalur" aria-label="Facebook" target="_blank" rel="noopener">Fb</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 CYBERIA 2K26. All Rights Reserved.</span>
+      <span>Designed for Roever Engineering College &middot; CSE &amp; AI&amp;DS</span>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts.js" defer></script>
+
+</body>
+</html>
