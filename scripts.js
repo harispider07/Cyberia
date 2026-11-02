@@ -13,15 +13,41 @@ var loaderInterval = setInterval(function(){
   li++;
   if(li < loaderMsgs.length){ loaderStatus.textContent = loaderMsgs[li]; }
 }, 700);
-window.addEventListener('load', function(){
+var loaderDone = false;
+function finishLoader(){
+  if(loaderDone) return;
+  loaderDone = true;
+  clearInterval(loaderInterval);
+  document.getElementById('loaderStatus').textContent = loaderMsgs[loaderMsgs.length-1];
   setTimeout(function(){
-    clearInterval(loaderInterval);
-    document.getElementById('loaderStatus').textContent = loaderMsgs[loaderMsgs.length-1];
-    setTimeout(function(){
-      document.getElementById('loader').classList.add('hidden');
-    }, 400);
-  }, 1400);
+    document.getElementById('loader').classList.add('hidden');
+  }, 400);
+}
+window.addEventListener('load', function(){
+  setTimeout(finishLoader, 1400);
 });
+/* Safety net: never let the loader hang the site if images are slow on a weak connection */
+setTimeout(finishLoader, 5000);
+
+/* ---------- BROCHURE INTRO POPUP ---------- */
+var brochurePopup = document.getElementById('brochurePopup');
+var brochurePopupClose = document.getElementById('brochurePopupClose');
+function openBrochurePopup(){
+  if(!brochurePopup) return;
+  brochurePopup.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeBrochurePopup(){
+  if(!brochurePopup) return;
+  brochurePopup.classList.remove('open');
+  document.body.style.overflow = '';
+}
+if(brochurePopup){
+  setTimeout(openBrochurePopup, 2000);
+  brochurePopupClose.addEventListener('click', closeBrochurePopup);
+  brochurePopup.addEventListener('click', function(e){ if(e.target === brochurePopup) closeBrochurePopup(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && brochurePopup.classList.contains('open')) closeBrochurePopup(); });
+}
 
 /* ---------- FILM REEL HOLES ---------- */
 ['reelLeft','reelRight'].forEach(function(id){
@@ -179,7 +205,7 @@ if(PARTICLE_COUNT > 0){
 }
 
 /* ---------- COUNTDOWN ---------- */
-var targetDate = new Date('2026-08-28T10:00:00+05:30').getTime();
+var targetDate = new Date('2026-09-11T10:00:00+05:30').getTime();
 function updateCountdown(){
   var now = Date.now();
   var diff = targetDate - now;
@@ -244,49 +270,73 @@ var events = [
     img:'assets/events/idea.jpg',
     preview:'Pitch your boldest tech idea and defend it under pressure.',
     desc:'A rapid-fire ideation and pitching challenge where teams present original tech concepts to a panel of judges.',
-    team:'', duration:'', fee:'Name', coordinator:'[9080706050]', contact:'',
-    rules:['Team size as per [TEAM SIZE].','Duration as per [DURATION].','Follow event-day instructions from coordinators.','Official rules to be announced in the brochure.']
+    date:'11 September 2026', venue:'Conference Hall - REC', 
+    team:'Max 3 Members', duration:'5 Minutes', 
+    lead:{name:'ADHINA SHREE', phone:'9585620540'},
+    staff:{name:'Mr.K.SIVAKUMAR', phone:'9524193027'},
+    teamMembers:['JOTHIKA P','GAYATHRI S','ANITHA V','SAVITHA S','ELAVARASI R','DHARSHNI A'],
+    rules:['Each team can have a maximum of 3 members.','Presentation time: 5 minutes.','Q&A session: 2 minutes.','deadline for PPT submission is 09-09-2026. Please submit accordingly.']
   },
   {
     id:'logic-hunt', name:'Logic Hunt', type:'Technical',
     img:'assets/events/logichunt.jpg',
     preview:'Solve layered logic and programming puzzles against the clock.',
     desc:'A multi-round problem-solving event testing algorithmic thinking, debugging speed and logical reasoning.',
-    team:'', duration:'', fee:'Name', coordinator:'[9080706050]', contact:'',
-    rules:['Team size as per [TEAM SIZE].','Duration as per [DURATION].','No external resources unless permitted.','Official rules to be announced in the brochure.']
+    date:'11 September 2026', venue:'DS Lab - REC', 
+    team:'Individual', duration:'30 Minutes',
+    lead:{name:'RAMYA S', phone:'9597092539'},
+    staff:{name:'Mrs.K.USHA NANDHINI', phone:'9094930631'},
+    teamMembers:['VARADHARAJ','DIVYA D','SUBITHA T','BHUVANESHWARI','PRIYADHARSHINI'],
+    rules:['Internet usage is strictly prohibited.','Any form of malpractice lead to disqualification.','Participants must complete the task within the given time limit.','Languages Python,java,C.']
   },
   {
     id:'prompt-arena', name:'Prompt Arena', type:'Technical',
     img:'assets/events/prompt.jpg',
     preview:'Engineer prompts to solve creative and technical AI challenges.',
     desc:'A competitive prompt-engineering event testing precision, creativity and understanding of AI model behavior.',
-    team:'', duration:'', fee:'Name', coordinator:'[9080706050]', contact:'',
-    rules:['Team size as per [TEAM SIZE].','Duration as per [DURATION].','Approved tools only.','Official rules to be announced in the brochure.']
+    date:'11 September 2026', venue:'Research Lab - REC',
+    team:'Max 3 Members', duration:'30 Minutes',
+    lead:{name:'DHANUSHRAJ P', phone:'7358816874'},
+    staff:{name:'Mr.E.JEAN EDWARD ELEMENT', phone:'9655951920'},
+    teamMembers:['NITHISHKUMAR N','BALA P','DEEPAK S','SUBA LAKSHMI','ANANTHI A','VINOTHA M'],
+    rules:['Time Limit: 30 minutes.','Topic: Given on the spot.','Task: Create a webpage using any AI chatbot, Front-end only.','	Evaluation: Based on how well the webpage meets the given criteria.']
   },
   {
-    id:'meme-creation', name:'Meme Creation', type:'Non-Technical',
+    id:'meme-creation', name:'Meme League', type:'Non-Technical',
     img:'assets/events/Memeleague.jpg',
     preview:'Turn tech culture into the funniest, sharpest memes on the floor.',
     desc:'A creative meme-making contest around technology and campus culture, judged on originality and humor.',
-    team:'', duration:'', fee:'Name', coordinator:'[9080706050]', contact:'',
-    rules:['Team size as per [TEAM SIZE].','Duration as per [DURATION].','No offensive or plagiarised content.','Official rules to be announced in the brochure.']
+    date:'11 September 2026', venue:'Seminar Hall - REC',
+    team:'Individual', duration:'30 Minutes',
+    lead:{name:'RAGUL D', phone:'6369762414'},
+    staff:{name:'Mrs.S.Vijayakumari', phone:'9944212958'},
+    teamMembers:['SANJAY S','LENINKUMAR R','GOWTHAMAN'],
+    rules:['🎯 Theme-based: Memes must match the given topic.',' ⌛ Time limit: 30 minutes to create and submit.','🧠  Judging Criteria: Creativity, relevance to theme, humor, and originality.','🚫  Late submissions will not be accepted.','✅  Judges decisions are final.']
   },
   {
     id:'mystery-hunt', name:'Mystery Hunt', type:'Non-Technical',
     img:'assets/events/Mysteryhunt.jpg',
     preview:'Crack clues, chase leads and race across campus to the finish.',
     desc:'A campus-wide treasure hunt combining puzzles, riddles and physical checkpoints against the clock.',
-    team:'', duration:'', fee:'Name', coordinator:'[9080706050]', contact:'',
-    rules:['Team size as per [TEAM SIZE].','Duration as per [DURATION].','Stay within designated campus zones.','Official rules to be announced in the brochure.']
+    date:'11 September 2026', venue:'Admin Block GoundFloor - REC', 
+    team:'Max 4 Members', duration:'45 Minutes',
+    lead:{name:'VISHAL', phone:'6383670409'},
+    staff:{name:'Mrs.K.Susila Rani', phone:'9486306901'},
+    teamMembers:['ANBALAGAN A','FEROSKHAN I','JOHNSY','PRAGATHI R','PRADAPMAVEEN M'],
+    rules:['Finish within the given time.','Don’t use any devices.','No arguments or fighting with other groups.','Additional Rules (To be announced on the spot)']
   },
   {
     id:'connectx', name:'ConnectX', type:'Non-Technical',
-    img:'assets/events/connectx.jpg',
+    img:'assets/events/ConnectX.jpg',
     preview:'A team-building relay of communication and strategy rounds.',
     desc:'A multi-round team event testing collaboration, communication and quick strategic thinking.',
-    team:'', duration:'', fee:'Name', coordinator:'[9080706050]', contact:'',
-    rules:['Team size as per [TEAM SIZE].','Duration as per [DURATION].','Maintain sportsmanship throughout.','Official rules to be announced in the brochure.']
-  }
+    date:'11 September 2026', venue:'OS LAB - REC',
+    team:'Max 4 Members', duration:'45 Minutes',
+    lead:{name:'SOWMIYA K', phone:'9894770705'},
+    staff:{name:'Mrs.R.Saranya Rani', phone:'8883383724'},
+    teamMembers:['SUJITHA A','YUVASRI K','SINDHUJA R','MOHANAPRIYA P','SUBASH'],
+    rules:['A whistle will be used during the event.',' The participant who knows the answer first must pick up the whistle and answer.',' Participants must follow the coordinator’s instructions and maintain discipline throughout the event.']
+  },
 ];
 
 var eventsGrid = document.getElementById('eventsGrid');
@@ -297,13 +347,15 @@ events.forEach(function(ev){
   card.setAttribute('data-reveal','');
   var catClass = ev.type === 'Technical' ? 'technical' : 'non-technical';
   card.innerHTML =
-    '<div class="event-media"><img src="'+ev.img+'" alt="'+ev.name+' event artwork" loading="lazy"><span class="event-cat '+catClass+'">'+ev.type+'</span></div>'+
+    '<div class="event-media"><img src="'+ev.img+'" alt="'+ev.name+' event artwork" loading="lazy"><span class="event-cat '+catClass+'">'+ev.type+'</span>'+
+      '<div class="event-coord-overlay"><span class="oc-label">Student Coordinator</span><span class="oc-name">'+ev.lead.name+'</span><span class="oc-phone">&#128222; '+ev.lead.phone+'</span></div>'+
+    '</div>'+
     '<div class="event-body">'+
       '<h3 class="event-title">'+ev.name+'</h3>'+
       '<p class="event-desc">'+ev.preview+'</p>'+
       '<div class="event-meta"><span>&#128101; '+ev.team+'</span><span>&#9201; '+ev.duration+'</span></div>'+
       '<div class="event-actions">'+
-        '<a href="#register" class="btn btn-primary">Register</a>'+
+        '<a href="https://forms.gle/amWnfjJcyrip1Zgp7" target="_blank" class="btn btn-primary">Register</a>'+
         '<button type="button" class="btn btn-ghost view-details" data-id="'+ev.id+'">View Details</button>'+
       '</div>'+
     '</div>';
@@ -345,11 +397,21 @@ function openEventModal(id){
   cat.className = 'event-cat ' + catClass;
   document.getElementById('modalTitle').textContent = ev.name;
   document.getElementById('modalDesc').textContent = ev.desc;
+  document.getElementById('modalDate').textContent = ev.date || '28 August 2026';
+  document.getElementById('modalVenue').textContent = ev.venue || 'Roever Engineering College';
+  document.getElementById('modalDuration').textContent = ev.time ? ev.time + '  •  ' + ev.duration : ev.duration;
   document.getElementById('modalTeam').textContent = ev.team;
-  document.getElementById('modalDuration').textContent = ev.duration;
   document.getElementById('modalFee').textContent = ev.fee;
-  document.getElementById('modalCoord').textContent = ev.coordinator;
-  document.getElementById('modalContact').textContent = ev.contact;
+  var teamHtml = (ev.teamMembers && ev.teamMembers.length) ?
+    '<div class="team-members-wrap"><div class="team-label">Team Members</div>'+ev.teamMembers.map(function(n){ return '<span class="team-chip">'+n+'</span>'; }).join('')+'</div>' : '';
+  document.getElementById('modalCoords').innerHTML =
+    '<div class="coord-block"><div class="coord-role-label">Lead Student Coordinator</div>'+
+      '<div class="coord-name">'+ev.lead.name+'</div>'+
+      '<div class="coord-phone">&#128222; '+ev.lead.phone+'</div></div>'+
+    teamHtml+
+    '<div class="coord-block staff"><div class="coord-role-label">Staff Coordinator</div>'+
+      '<div class="coord-name">'+ev.staff.name+'</div>'+
+      '<div class="coord-phone">&#128222; '+ev.staff.phone+'</div></div>';
   document.getElementById('modalRules').innerHTML = ev.rules.map(function(r){ return '<li>'+r+'</li>'; }).join('');
   eventModal.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -368,12 +430,12 @@ eventModal.addEventListener('click', function(e){ if(e.target === eventModal) cl
 
 /* ---------- GALLERY ---------- */
 var galleryData = [
-  {id:1, src:'assets/gallery/Gallery1.jpg', title:'Campus', cat:'Campus'},
-  {id:2, src:'assets/gallery/Gallery2.jpg', title:'Cyberia', cat:'Cyberia'},
-  {id:3, src:'assets/gallery/Gallery3.jpg', title:'Technical Events', cat:'Technical Events'},
-  {id:4, src:'assets/gallery/Gallery4.jpg', title:'Students', cat:'Students'},
-  {id:5, src:'assets/gallery/Gallery5.jpg', title:'Previous Symposiums', cat:'Previous Symposiums'},
-  {id:6, src:'assets/gallery/Gallery5.jpg', title:'Campus', cat:'Campus'}
+  {id:1, src:'assets/gallery/Gallery1.jpg', title:'', cat:'Campus'},
+  {id:2, src:'assets/gallery/Gallery2.jpg', title:'', cat:'Cyberia'},
+  {id:3, src:'assets/gallery/Gallery3.jpg', title:'', cat:'Technical Events'},
+  {id:4, src:'assets/gallery/Gallery4.jpg', title:'', cat:'Students'},
+  {id:5, src:'assets/gallery/Gallery5.jpg', title:'', cat:'Previous Symposiums'},
+  {id:6, src:'assets/gallery/Gallery6.jpg', title:'', cat:'Campus'}
 ];
 var galleryGrid = document.getElementById('galleryGrid');
 galleryData.forEach(function(g, idx){
@@ -433,6 +495,31 @@ document.addEventListener('keydown', function(e){
     if(e.key === 'ArrowRight') showNext();
     if(e.key === 'ArrowLeft') showPrev();
   }
+});
+
+/* ---------- FORCE BROCHURE DOWNLOAD (fixes Safari/in-app browsers ignoring 'download' attr) ---------- */
+document.querySelectorAll('a[download]').forEach(function(link){
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    var url = link.getAttribute('href');
+    var filename = link.getAttribute('download') || 'Brochure.jpg';
+    fetch(url)
+      .then(function(res){ return res.blob(); })
+      .then(function(blob){
+        var blobUrl = URL.createObjectURL(blob);
+        var tempLink = document.createElement('a');
+        tempLink.href = blobUrl;
+        tempLink.download = filename;
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+        setTimeout(function(){ URL.revokeObjectURL(blobUrl); }, 3000);
+      })
+      .catch(function(){
+        // fallback: if fetch fails (e.g. CORS), just open the file normally
+        window.open(url, '_blank');
+      });
+  });
 });
 
 /* ---------- LIGHTWEIGHT PARALLAX ---------- */
